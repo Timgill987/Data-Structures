@@ -22,13 +22,13 @@ return elements in Last In First Out order.
 
 #     def push(self, value):
 #         self.size += 1
-#         self.storage.insert(0, value)
+#         self.storage.insert(0, value) Can use .append instead of insert on the tail
 #         pass
 
 #     def pop(self):
 #         if self.size > 0:
 #             self.size = self.size - 1
-#             return self.storage.pop(0)
+#             return self.storage.pop(0) can pop without using a param.
 
 from singly_linked_list import LinkedList
 
