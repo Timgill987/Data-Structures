@@ -7,6 +7,12 @@ class ListNode:
         self.prev = prev
         self.value = value
         self.next = next
+
+    def delete(self):
+        if self.prev is not None:
+            self.prev.next = self.next
+        if self.next is not None:
+            self.next.prev = self.prev
 """
 Our doubly-linked list class. It holds references to
 the list's head and tail nodes.
@@ -137,6 +143,7 @@ class DoublyLinkedList:
     List and inserts it as the new head node of the List.
     """
     def move_to_front(self, node):
+
         if node.prev is not None:
             node.prev.next = node.next
         node.next = node.prev
@@ -150,13 +157,23 @@ class DoublyLinkedList:
     List and inserts it as the new tail node of the List.
     """
     def move_to_end(self, node):
-        if node.next is not None:
-            node.next.prev = node.prev
-        node.prev = node.next
-        node.prev = self.tail
-        self.tail.next = node
-        node.next = None
-        self.tail = node
+        value = node.value
+        if self.tail == node:
+            return
+        if self.head == node:
+            self.remove_from_head()
+            self.add_to_tail(value)
+        else:
+            node.delete()
+            self.length -= 1
+            self.add_to_tail(value)
+
+        # if node.next is not None:
+        #     node.next.prev = node.prev
+        # node.prev = node.next
+        # self.tail.next = node
+        # node.next = None
+        # self.tail = node
 
     """
     Deletes the input node from the List, preserving the
