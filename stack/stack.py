@@ -39,7 +39,6 @@ class Stack:
 
     def __len__(self):
         return self.size
-        pass
 
     def push(self, value):
         self.size += 1
