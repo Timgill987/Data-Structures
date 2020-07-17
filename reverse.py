@@ -25,7 +25,7 @@ def reverse_ll(ll)
         return ll
 
     #if ll has more than one node
-        current = ;;/head
+        current = ll.head
         previous = None
         next_node = None
         while current is not None:
