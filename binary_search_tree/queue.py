@@ -36,7 +36,7 @@ from singly_linked_list import LinkedList
     #         return self.storage.pop(0)
     #     pass
 
-class Queue:
+class Queue: # using the linked list and its functions to carry out the Queue functions
     def __init__(self):
         self.size = 0
         self.storage = LinkedList()
@@ -49,7 +49,7 @@ class Queue:
         self.storage.add_to_tail(value)
         pass
 
-    def dequeue(self):
+    def dequeue(self): 
         if self.size > 0:
             self.size = self.size - 1
             return self.storage.remove_head()

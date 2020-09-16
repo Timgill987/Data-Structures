@@ -32,7 +32,7 @@ return elements in Last In First Out order.
 
 from singly_linked_list import LinkedList
 
-class Stack:
+class Stack: #using the linked list and its functions to carry out stacking
     def __init__(self):
         self.size = 0
         self.storage = LinkedList()
